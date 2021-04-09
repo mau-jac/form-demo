@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block section %}
+
+<h3 class="">Sign-up Form</h3>
+
+<!-- Switch -->
+<div class="switch">
+  <p class="center">Form Method</p>
+  <label>
+    GET
+    <input type="checkbox" onclick="methodUpdate()" id="select">
+    <span class="lever"></span>
+    POST
+  </label>
+</div>
+
+{% endblock %}
+
+
+{% block content %}
+
+<form class="col s12 m8 offset-m2 l6 offset-l3" id="formm" method="get" action="/submit/">
+
+  <div class="row ">
+    <div class="input-field center col s12">
+      <input id="first_name" type="text" class="validate" name="name" required>
+      <label for="first_name">Name</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="password" type="password" class="validate" name="password" required>
+      <label for="password">Password</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="email" type="email" class="validate" name="new_email">
+      <label for="email">Email</label>
+    </div>
+  </div>
+
+  <div class="row center">
+    <button class="btn waves-effect waves-light ">Submit
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+
+</form>
+
+{% endblock %}
+
+
+{% block script %}
+
+<script>
+  function methodUpdate() {
+    let checky = document.getElementById("select").checked;
+    console.log(checky);
+
+    if (checky && formm.hasAttribute("method")) {
+      formm.method = "post";
+    } else if (!checky && formm.hasAttribute("method")) {
+      formm.method = "get";
+    } else {
+      alert("Method selection logic error!");
+    }
+    console.log(formm.method);
+  }
+</script>
+{% endblock %}

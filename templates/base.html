@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Materialized link, compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <title>Form Submission Demo</title>
+</head>
+
+<body>
+    <header>
+        <nav class="teal">
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo left">Form Demo</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right hide-on-med-and-up"><i
+                        class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-small-and-down">
+                    <li><a href="/users/"> Users </a></li>
+                    <li><a href="/">Sign-up Form</a></li>
+                </ul>
+            </div>
+        </nav>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="/users/">Users</a></li>
+            <li><a href="/">Sign-up Form</a></li>
+        </ul>
+    </header>
+
+    <main class="container">
+
+        <div class="row section">
+            <div class="flex-btw">
+
+                {% block section %}
+                {% endblock %}
+
+            </div>
+        </div>
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".sidenav");
+        var instances = M.Sidenav.init(elems);
+    });
+</script>
+{% block script %}{% endblock %}
+
+</html>

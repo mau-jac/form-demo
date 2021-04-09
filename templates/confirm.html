@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block section %}
+<h3>Submission successfull ✔</h3>
+{% endblock %}
+
+{% block content %}
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP Method</th>
+      <th>Name</th>
+      <th>Password</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>{{method}}</td>
+      <td>{{name}}</td>
+      <td>{{password}}</td>
+      <td>{{email}}</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

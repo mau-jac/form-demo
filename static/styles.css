@@ -1,0 +1,21 @@
+nav h1 {
+  font-size: 2rem;
+  margin: 0;
+  /*     text-align: center; */
+}
+
+main .flex-btw {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*     padding: 0 1rem; */
+  /*     margin-bottom: 1rem; */
+}
+
+main .switch p {
+  font-weight: 700;
+}
+
+main .switch label {
+  font-size: 1.5rem;
+}

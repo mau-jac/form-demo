@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block section %}
+<h3>Regidtered Users</h3>
+{% endblock %}
+
+{% block content %}
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Password</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    {% for user in users %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.password}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
